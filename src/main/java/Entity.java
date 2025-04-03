@@ -17,15 +17,16 @@ public abstract class Entity {
         }
     }
     
-    public Entity(int power, int movement, int defense, int xp) {
-        try {
+    public Entity(int power, int movement, int defense, int xp) throws EntityException {
             setPower(power);
             setMovement(movement);
             setDefense(defense);
             setXp(xp);
-        } catch (EntityException e) {
-            return;
-        }
+    }
+    
+    public Entity(int xp) throws EntityException {
+        setXp(xp);
+        calculateLevel();
     }
     
     // Getters
@@ -58,7 +59,7 @@ public abstract class Entity {
     
     // I am stupid haha
     public void calculateLevel() {
-        int newLevel = (int) Math.log((double) xp / 10);
+        int newLevel = (int) Math.ceil(Math.log(xp) / 10);
         if (newLevel > level) {
             level = newLevel;
             levelUp();
