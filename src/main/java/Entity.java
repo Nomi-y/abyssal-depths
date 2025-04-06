@@ -73,7 +73,7 @@ public abstract class Entity {
     }
     
     public void rest(int heal) {
-        setDefense(defense - heal);
+        setDefense(defense + heal);
     }
     
     public void attack(Entity en) {
