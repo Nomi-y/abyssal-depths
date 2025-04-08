@@ -2,12 +2,13 @@ import java.util.Comparator;
 
 public class Item extends Entity implements Collectible, Comparaable<Item> {
 
-    private String name;
+    private final String name;
     private final Rarity rarity;
     
     public Item(String name, Rarity r) throws EntityException {
         super(0, 0, 1, 20);
         if (name == null || name.isEmpty()) throw new EntityException("Item must have a name!");
+        this.name = name;
         rarity = r;
     }
     

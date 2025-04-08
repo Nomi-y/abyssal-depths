@@ -75,7 +75,8 @@ public abstract class Entity {
         setDefense(defense + heal);
     }
     
-    public void attack(Entity en) {
+    public void attack(Entity en) throws EntityException {
+        if (en == null) throw new EntityException("Null");
         en.takeDamage(power);
     }
 

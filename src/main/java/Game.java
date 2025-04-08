@@ -19,6 +19,11 @@ public class Game {
         collectedItems = new ArrayList<>();
     }
     
+    public void setPlayer(Player player) throws GameException {
+        if (player == null) throw new GameException("Player cannot be null!");
+        this.player = player;
+    }
+    
     public int getGlobalLevel() { return globalLevel; }
     
     
@@ -31,16 +36,19 @@ public class Game {
         enemies.add(e);
     }
     
+    public int countEnemies() {
+        return enemies.size();
+    }
     
-    public void updateEnemies() {
+    
+    public void updateEnemies() throws EntityException {
         Iterator<Enemy> it = enemies.iterator();
         while(it.hasNext()) {
             Enemy en = it.next();
             if (en.getDefense() == 0) {
-                enemies.remove(en);
+                it.remove();
                 defeatedEnemies.add(en);
                 score += en.getXp();
-                continue;
             }
             en.attack(player);
         }
@@ -100,6 +108,20 @@ public class Game {
         int total = 0;
         for (Enemy en : defeatedEnemies) total += en.getXp();
         return (double) total / defeatedEnemies.size();
+    }
+    
+    public Item getItemByName(String name) {
+        for (Item item : collectedItems) {
+            if (item.getName().equals(name)) {
+                return item;
+            }
+        }
+        return null;
+    }
+    
+    public Item getItemByIndex(int in) throws GameException {
+        if (in < 0 || in > collectedItems.size()) throw new GameException("Index out of bounds!");
+        return collectedItems.get(in);
     }
     
     @Override

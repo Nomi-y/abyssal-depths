@@ -4,7 +4,7 @@ public abstract class Player extends Entity {
         super(power, movement, defense, xp);
     }
 
-    public boolean submitMoves(String action, Entity target) {
+    public boolean submitMoves(String action, Entity target) throws EntityException {
         switch (action.toLowerCase()) {
             case "attack":
                 if (target != null) {
