@@ -32,4 +32,10 @@ public abstract class Player extends Entity {
     public abstract void abilityOffensive();
     public abstract void abilitySpecial();
     public abstract void abilityUtility();
+
+    @Override
+    public String toString() {
+    return super.toString();
+    }
+
 }

@@ -48,4 +48,11 @@ public class Skeleton extends Enemy {
             System.out.println("Skeleton failed to level up.");
         }
     }
+
+    @Override
+    public String toString() {
+    return super.toString() + " [Arrows=" + arrows + "]";
+    }
+
 }
+

@@ -50,5 +50,10 @@ public class Slime extends Enemy {
             System.out.println("Couldnt level up");
         }
     }
+    @Override
+    public String toString() {
+    return super.toString() + " [SplitLevel=" + splitLevel + "]";
+    }
+
 
 }

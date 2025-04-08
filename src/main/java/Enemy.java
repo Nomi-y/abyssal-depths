@@ -16,5 +16,10 @@ public abstract class Enemy extends Entity {
     }
 
     public abstract void processTurn();
+    @Override
+    public String toString() {
+    return super.toString() + " [Aggressive=" + isAgressive + "]";
+    }
+
 
 }

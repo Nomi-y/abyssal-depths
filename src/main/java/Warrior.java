@@ -53,4 +53,9 @@ public class Warrior extends Player {
             System.out.println("Warrior failed to level up.");
         }
     }
+    @Override
+    public String toString() {
+    return super.toString();
+    }
+
 }

@@ -66,4 +66,10 @@ public class Mage extends Player {
             System.out.println("Mage failed to level up.");
         }
     }
+
+    @Override
+    public String toString() {
+    return super.toString() + " [Mana=" + mana + "]";
+    }
+
 }

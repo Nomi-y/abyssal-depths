@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class Item extends Entity implements Collectible {
+public class Item extends Entity implements Collectible, Comparaable<Item> {
 
     private String name;
     private final Rarity rarity;
@@ -21,5 +21,11 @@ public class Item extends Entity implements Collectible {
     public int compareTo(Item other) {
         return this.getName().compareToIgnoreCase(other.getName()); // or compare by rarity
     }
+
+    @Override
+    public String toString() {
+    return "Item [Name=" + name + ", Rarity=" + rarity + "]";
+    }
+
     
 }

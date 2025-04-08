@@ -36,4 +36,10 @@ public class Dragon extends Enemy {
             System.out.println("Dragon failed to level up.");
         }
     }
+
+    @Override
+    public String toString() {
+    return super.toString() + " [SizeClass=" + sizeClass + "]";
+    }
+
 }

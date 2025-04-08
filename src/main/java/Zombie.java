@@ -49,4 +49,9 @@ public class Zombie extends Enemy {
         }
     }
 
+    @Override
+    public String toString() {
+    return super.toString() + " [Captain=" + captain + "]";
+    }
+
 }

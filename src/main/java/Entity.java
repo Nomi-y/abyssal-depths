@@ -57,7 +57,6 @@ public abstract class Entity {
         this.xp = xp;
     }
     
-    // I am stupid haha
     public void calculateLevel() {
         int newLevel = xp / 100 + 1;
         if (newLevel > level) {
@@ -79,4 +78,11 @@ public abstract class Entity {
     public void attack(Entity en) {
         en.takeDamage(power);
     }
+
+    @Override
+public String toString() {
+    return getClass().getSimpleName() + " [Power=" + power + ", Movement=" + movement +
+            ", Defense=" + defense + ", XP=" + xp + ", Level=" + level + "]";
+}
+
 }

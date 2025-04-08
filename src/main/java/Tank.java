@@ -43,4 +43,10 @@ public class Tank extends Player {
             System.out.println("Tank failed to level up.");
         }
     }
+
+    @Override
+    public String toString() {
+    return super.toString();
+    }
+
 }
