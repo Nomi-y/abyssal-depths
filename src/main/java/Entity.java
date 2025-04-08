@@ -49,7 +49,7 @@ public abstract class Entity {
     }
     
     public void setDefense(int defense) {
-        this.defense = defense;
+        this.defense = Math.max(0, defense);
     }
     
     public void setXp(int xp) throws EntityException {
@@ -59,7 +59,7 @@ public abstract class Entity {
     
     // I am stupid haha
     public void calculateLevel() {
-        int newLevel = (int) Math.ceil(Math.log(xp) / 10);
+        int newLevel = xp / 100 + 1;
         if (newLevel > level) {
             level = newLevel;
             levelUp();
